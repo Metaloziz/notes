@@ -34,11 +34,17 @@ export const Description: FC = () => (
             5. Использование CSS препроцессора. <br/>
             6. Использование TypeScript <br/>
             7. Залить на    <Link  href="https://github.com/Metaloziz/notes" title="GitHub" target="_blank">GitHub</Link> <br/>
-            8. Залить на netlify <br/>
+            8. Залить на   <Link
+            href="https://642c894098596e03e7928a4e--gorgeous-arithmetic-bb7010.netlify.app/"
+            title="CV" target="_blank"
+          >
+            netlify
+          </Link> <br/>
 
           </div>
 
         </div>
+
 
         <div>
           <b>Выполнил: </b> Гайтюкевич А.В.
