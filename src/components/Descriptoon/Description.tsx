@@ -15,7 +15,7 @@ export const Description: FC = () => (
       </Typography>
       <div className={style.body}>
         <div>
-          <b>Тестовое</b> для: ООО Ивашин
+          <b>Тестовое для:</b>  ООО Ивашин
         </div>
         <div>
           <b>Тема</b>: конвертер валют
