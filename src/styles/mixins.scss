@@ -1,0 +1,29 @@
+@import "./variables";
+
+@mixin textColumns($columns: 2, $fontSize: 16px) {
+  font-size: $fontSize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-word;
+  -webkit-line-clamp: $columns; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+@mixin border() {
+  border: 2px solid $main_color;
+  border-radius: 17px;
+}
+
+
+@mixin delete_icon(){
+
+  color: $icon_color;
+
+  &:hover {
+    color: #d21758;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+}

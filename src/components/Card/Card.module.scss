@@ -1,0 +1,76 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.main {
+  box-sizing: border-box;
+  min-height: 50px;
+  max-height: 200px;
+  min-width: 150px;
+  max-width: 300px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 2px solid white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 3%;
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    color: $icon_color;
+
+    .editIcon:hover {
+      color: $main_color;
+      transition: all 0.5s;
+    }
+
+    .deleteIcon {
+      @include delete_icon()
+    }
+
+  }
+
+  .text {
+    @include textColumns(4, 20px);
+    user-select: none;
+    font-weight: bolder;
+    color: $text_note_color;
+    text-align: left;
+  }
+
+  b {
+    color: $gray_color;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  &:hover {
+    border: 2px solid $main_color;
+  }
+
+}
+
+
+.editNote {
+  border: 2px solid $main_color;
+  pointer-events: none;
+
+
+  .editIcon {
+    color: $main_color;
+  }
+}
+
+.disabledNote {
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+
+
+.main {
+  height: 10vh;
+  width: 100vw;
+  background-color: $main_color;
+  font-size: 30px;
+
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 10vw;
+
+}

@@ -1,0 +1,51 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  column-gap: 2%;
+  gap: 10px;
+  padding: 1%;
+
+  //flex-grow: 1;
+  width: 300px;
+  min-width: 20vw;
+  min-height: 20vh;
+  @include border();
+
+  font-weight: bolder;
+
+  .filter {
+    height: 10%;
+    width: 100%;
+    text-align: left;
+
+    span {
+      color: $tag_color;
+      font-size: 20px;
+
+    }
+
+  }
+
+
+  .tag {
+    display: flex;
+    align-items: center;
+    color: $icon_color;
+    gap: 10%;
+
+    .icon {
+
+      @include delete_icon()
+
+    }
+
+  }
+
+
+}

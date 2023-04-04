@@ -1,0 +1,31 @@
+@import "/src/styles/variables";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25vh;
+
+
+  .textArea {
+    font-size: 2rem;
+    resize: none;
+    min-width: 50vw;
+    margin: 2vh 0 2vh 0;
+    padding: 1%;
+
+  }
+
+
+  b {
+    color: $error_color;
+  }
+
+}
+
+
+.error {
+
+  border: $error_color 3px solid;
+
+}

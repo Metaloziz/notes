@@ -1,0 +1,15 @@
+@import "./src/styles/variables";
+
+.main {
+  color: $tag_color;
+  font-size: 20px;
+  transition: all 0.5s;
+  //font-weight: bolder;
+
+  &:hover {
+    //font-size: 23px;
+    color: $tag_color_active;
+    cursor: pointer;
+  }
+
+}
