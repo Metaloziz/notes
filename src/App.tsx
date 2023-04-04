@@ -1,3 +1,4 @@
+import { Description } from "components/Descriptoon/Description";
 import { FC } from 'react'
 
 import style from './App.module.scss'
@@ -11,6 +12,7 @@ const App: FC = () => (
     <Header />
     <Input />
     <Table />
+    <Description/>
   </div>
 )
 
