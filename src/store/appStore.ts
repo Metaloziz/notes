@@ -114,7 +114,7 @@ class AppStore {
   }
 
   setFilterTag = (tag: string): void => {
-    this.filteredTag = tag
+    this.filteredTag = tag.trim()
   }
 
   setViewNote = (id: string): void => {

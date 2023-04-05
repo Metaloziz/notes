@@ -14,7 +14,7 @@ export const TextNote: FC<TextNotePropsType> = observer(({ text }) => {
 
   const words = text.split(' ').map(word => {
     if (allTags[word]) {
-      return <Tag key={word} setFilterTag={setFilterTag} text={`${word} `} />
+      return <Tag key={word} setFilterTag={setFilterTag} tag={`${word} `} />
     }
     return <span key={word}>{`${word} `}</span>
   })

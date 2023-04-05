@@ -15,7 +15,7 @@ export const TagsTable: FC = observer(() => {
 
   const htmlTags = Object.keys(allTags).map(tag => (
     <div key={tag} className={style.tag}>
-      <Tag setFilterTag={setFilterTag} text={tag} />
+      <Tag setFilterTag={setFilterTag} tag={tag} />
       <ClearIcon className={style.icon} onClick={() => removeTag(tag)} />
     </div>
   ))
