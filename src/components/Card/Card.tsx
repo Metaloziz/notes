@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
 
 import ClearIcon from '@mui/icons-material/Clear'
 import EditIcon from '@mui/icons-material/Edit'
@@ -14,6 +14,7 @@ type CardPropsType = { note: NoteType } & {
   setEditMode: (editNode: EditModeType | null) => void
   isActiveEditMode: boolean
   editNoteId: string
+  openModal: () => void
 }
 
 export const Card: FC<CardPropsType> = ({
@@ -22,20 +23,31 @@ export const Card: FC<CardPropsType> = ({
   setEditMode,
   isActiveEditMode,
   editNoteId,
+  openModal,
 }) => {
-  const editNote = (): void => {
+  const editNoteHandle = (event: MouseEvent<SVGSVGElement>): void => {
+    event.stopPropagation()
     setEditMode({ text: note.text, id: note.id, isActive: true })
+  }
+
+  const deleteNoteHandle = (event: MouseEvent<SVGSVGElement>): void => {
+    event.stopPropagation()
+    deleteNote(note.id)
   }
 
   const editStyle =
     isActiveEditMode && (editNoteId === note.id ? style.editNote : style.disabledNote)
 
-  // todo заблокировать удаление при редактировании
   return (
-    <div className={`${style.main} ${editStyle}`}>
+    <div
+      role="button"
+      tabIndex={0}
+      className={`${style.main} ${editStyle}`}
+      onClick={openModal}
+    >
       <div className={style.header}>
-        <EditIcon className={style.editIcon} onClick={editNote} />
-        <ClearIcon className={style.deleteIcon} onClick={() => deleteNote(note.id)} />
+        <EditIcon className={style.editIcon} onClick={editNoteHandle} />
+        <ClearIcon className={style.deleteIcon} onClick={deleteNoteHandle} />
       </div>
       <div className={style.text}>
         <TextNote text={note.text} />

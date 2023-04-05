@@ -2,22 +2,30 @@ import { makeAutoObservable } from 'mobx'
 import { v1 } from 'uuid'
 
 import { defaultFilterValue } from 'constants/defaultFilterValue'
+import { FIRST_ARRAY_ITEM } from 'constants/first_array_item'
 import { initialEditModData } from 'constants/initialEditModData'
 import { EditModeType } from 'types/EditModeType'
 import { NoteType } from 'types/NoteType'
 import { TagsType } from 'types/TagsType'
 import { getTodayDate } from 'utils/getTodayDate'
 
+const defaultNote = {
+  text: 'default #default',
+  date: getTodayDate(),
+  id: v1(),
+  tags: { '#default': '#default' },
+}
+
 class AppStore {
-  notes: NoteType[] = [
-    { text: '1asd #qwe', date: getTodayDate(), id: v1(), tags: { '#qwe': '#qwe' } },
-  ]
+  notes: NoteType[] = [defaultNote]
 
   filteredTag: string = defaultFilterValue
 
   editMode: EditModeType = initialEditModData
 
-  allTags: TagsType = { '#qwe': '#qwe' }
+  viewNoteId: string = ''
+
+  allTags: TagsType = { '#default': '#default' }
 
   constructor() {
     makeAutoObservable(this)
@@ -107,6 +115,21 @@ class AppStore {
 
   setFilterTag = (tag: string): void => {
     this.filteredTag = tag
+  }
+
+  setViewNote = (id: string): void => {
+    this.viewNoteId = id
+  }
+
+  getCurrentNote = (): NoteType => {
+    const result = this.notes.filter(note => note.id === this.viewNoteId)[
+      FIRST_ARRAY_ITEM
+    ]
+
+    if (result) {
+      return result
+    }
+    return defaultNote
   }
 }
 

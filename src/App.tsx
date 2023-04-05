@@ -1,8 +1,8 @@
-import { Description } from "components/Descriptoon/Description";
 import { FC } from 'react'
 
 import style from './App.module.scss'
 
+import { Description } from 'components/Descriptoon/Description'
 import { Header } from 'components/Header/Header'
 import { Input } from 'components/Input/Input'
 import { Table } from 'components/Table/Table'
@@ -12,7 +12,7 @@ const App: FC = () => (
     <Header />
     <Input />
     <Table />
-    <Description/>
+    <Description />
   </div>
 )
 
