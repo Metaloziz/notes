@@ -45,7 +45,7 @@ export const Description: FC = () => (
             <br />
             8. Залить на{' '}
             <Link
-              href="https://642c894098596e03e7928a4e--gorgeous-arithmetic-bb7010.netlify.app/"
+              href="https://gorgeous-arithmetic-bb7010.netlify.app/"
               title="CV"
               target="_blank"
             >
